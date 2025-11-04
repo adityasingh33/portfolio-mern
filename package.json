@@ -1,0 +1,21 @@
+{
+  "name": "portfolio-mern",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Monorepo for Portfolio MERN (client: Vite React TS + Tailwind, server: Express TS)",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "build": "npm run -w client build && npm run -w server build",
+    "dev": "npm run -w client dev & npm run -w server dev",
+    "lint": "npm run -w client lint",
+    "format": "npm run -w client format",
+    "preview": "npm run -w client preview"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
+

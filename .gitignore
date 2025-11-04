@@ -1,0 +1,29 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Builds
+dist/
+build/
+.turbo/
+
+# Env
+.env
+.env.*.local
+
+# IDE
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+logs
+*.log
+*.log.*
+
+# TypeScript
+*.tsbuildinfo
+
