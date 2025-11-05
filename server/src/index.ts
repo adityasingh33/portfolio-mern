@@ -16,7 +16,19 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Health route (simple inline)
+// Root route
+app.get('/', (_req: Request, res: Response) => {
+  res.json({
+    message: 'Portfolio MERN API Server',
+    version: '0.1.0',
+    endpoints: {
+      health: '/health',
+      api: '/api/hello'
+    }
+  });
+});
+
+// Health route
 app.get('/health', (_req: Request, res: Response) => {
   res.status(200).json({ status: 'ok' });
 });
@@ -36,5 +48,6 @@ const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
+
 
 
