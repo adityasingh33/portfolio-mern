@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import routes from './routes';
 import { errorHandler } from './middleware/errorHandler';
+import { connectDB } from './utils/database';
 
 dotenv.config();
 
@@ -23,7 +24,8 @@ app.get('/', (_req: Request, res: Response) => {
     version: '0.1.0',
     endpoints: {
       health: '/health',
-      api: '/api/hello'
+      hello: '/api/hello',
+      contact: '/api/contact (POST)'
     }
   });
 });
@@ -45,9 +47,24 @@ app.use((_req: Request, res: Response) => {
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});
+
+// Connect to MongoDB and start server
+async function startServer() {
+  try {
+    // Connect to MongoDB
+    await connectDB();
+
+    // Start server
+    app.listen(PORT, () => {
+      console.log(`Server listening on port ${PORT}`);
+    });
+  } catch (error) {
+    console.error('Failed to start server:', error);
+    process.exit(1);
+  }
+}
+
+startServer();
 
 
 
