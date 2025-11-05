@@ -10,16 +10,21 @@ const DarkModeContext = createContext<DarkModeContextType | undefined>(undefined
 export function DarkModeProvider({ children }: { children: React.ReactNode }) {
   const [isDark, setIsDark] = useState<boolean>(() => {
     // Check localStorage first, then system preference
-    const stored = localStorage.getItem('darkMode');
-    if (stored !== null) {
-      return stored === 'true';
+    if (typeof window !== 'undefined') {
+      const stored = localStorage.getItem('darkMode');
+      if (stored !== null) {
+        return stored === 'true';
+      }
+      return window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return false;
   });
 
   useEffect(() => {
     // Update localStorage when dark mode changes
-    localStorage.setItem('darkMode', String(isDark));
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('darkMode', String(isDark));
+    }
     
     // Update document class for Tailwind dark mode
     if (isDark) {

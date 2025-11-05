@@ -109,18 +109,7 @@ export default function Hero() {
       <div className="relative z-10 container-custom py-20 md:py-32">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Text Content */}
-          <div className="flex-1 text-center lg:text-left relative">
-            {/* Profile Image Placeholder - Desktop: absolute positioned, Mobile: inline */}
-            <div className="mb-8 lg:mb-0 lg:absolute lg:top-0 lg:right-0 lg:-translate-y-4">
-              <div className="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 mx-auto lg:mx-0 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 dark:from-blue-600 dark:to-indigo-700 border-4 border-white dark:border-gray-800 shadow-2xl flex items-center justify-center overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                <div className="w-full h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                  <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-                    AS
-                  </span>
-                </div>
-              </div>
-            </div>
-
+          <div className="flex-1 text-center lg:text-left">
             {/* Name */}
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 dark:text-white mb-4 md:mb-6 tracking-tight">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
@@ -190,6 +179,17 @@ export default function Hero() {
                   />
                 </svg>
               </a>
+            </div>
+          </div>
+
+          {/* Profile Image Placeholder - Separate from text content to avoid overlap */}
+          <div className="hidden lg:block flex-shrink-0">
+            <div className="w-40 h-40 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 dark:from-blue-600 dark:to-indigo-700 border-4 border-white dark:border-gray-800 shadow-2xl flex items-center justify-center overflow-hidden transform hover:scale-105 transition-transform duration-300">
+              <div className="w-full h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                <span className="text-5xl font-bold text-white">
+                  AS
+                </span>
+              </div>
             </div>
           </div>
         </div>
