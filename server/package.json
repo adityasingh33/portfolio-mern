@@ -8,7 +8,8 @@
     "dev": "ts-node-dev --respawn --transpile-only --exit-child src/index.ts",
     "dev:nodemon": "nodemon --watch src --ext ts --exec \"ts-node src/index.ts\"",
     "start": "node dist/index.js",
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.json",
+    "seed": "ts-node scripts/seedProjects.ts"
   },
   "dependencies": {
     "body-parser": "^1.20.3",

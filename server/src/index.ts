@@ -24,7 +24,10 @@ app.get('/', (_req: Request, res: Response) => {
     version: '0.1.0',
     endpoints: {
       health: '/health',
+      apiHealth: '/api/health',
+      metrics: '/api/metrics',
       hello: '/api/hello',
+      projects: '/api/projects (GET)',
       contact: '/api/contact (POST)'
     }
   });
