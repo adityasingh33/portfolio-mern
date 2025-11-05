@@ -1,26 +1,7 @@
 import React from 'react';
 import Layout from './components/Layout';
 import Meta from './components/Meta';
-
-// Placeholder sections - you can replace these with actual components
-function HomeSection() {
-  return (
-    <section id="home" className="section min-h-screen flex items-center">
-      <div className="container-custom">
-        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
-          Hi, I'm <span className="text-blue-600 dark:text-blue-400">Aditya Singh</span>
-        </h1>
-        <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-          Full Stack Developer | B.Tech Computer Science
-        </p>
-        <p className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl">
-          Passionate about building scalable web applications with modern technologies.
-          MERN stack enthusiast exploring the endless possibilities of web development.
-        </p>
-      </div>
-    </section>
-  );
-}
+import Hero from './components/Hero';
 
 function AboutSection() {
   return (
@@ -67,7 +48,7 @@ export default function App() {
     <>
       <Meta />
       <Layout>
-        <HomeSection />
+        <Hero />
         <AboutSection />
         <ProjectsSection />
         <ContactSection />
