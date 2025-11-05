@@ -1,4 +1,5 @@
 import React from 'react';
+import Skills from './Skills';
 
 export default function About() {
   return (
@@ -107,6 +108,14 @@ export default function About() {
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* Skills Section */}
+            <div className="space-y-4">
+              <h3 className="text-xl md:text-2xl font-semibold text-gray-900 dark:text-white">
+                Skills
+              </h3>
+              <Skills compact={false} showCompetitiveProgramming={true} />
             </div>
           </div>
         </div>

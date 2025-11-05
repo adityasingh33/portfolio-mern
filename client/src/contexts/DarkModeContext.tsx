@@ -13,9 +13,20 @@ export function DarkModeProvider({ children }: { children: React.ReactNode }) {
     if (typeof window !== 'undefined') {
       const stored = localStorage.getItem('darkMode');
       if (stored !== null) {
-        return stored === 'true';
+        const value = stored === 'true';
+        // Apply immediately
+        if (value) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+        return value;
       }
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (systemPrefersDark) {
+        document.documentElement.classList.add('dark');
+      }
+      return systemPrefersDark;
     }
     return false;
   });
