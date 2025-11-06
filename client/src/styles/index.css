@@ -60,6 +60,47 @@
   .animate-slide-up {
     animation: slide-up 0.3s ease-out;
   }
+
+  /* Print styles for resume */
+  @media print {
+    @page {
+      margin: 1cm;
+    }
+
+    body {
+      background: white;
+      color: black;
+    }
+
+    .print\\:hidden {
+      display: none !important;
+    }
+
+    .print\\:shadow-none {
+      box-shadow: none !important;
+    }
+
+    .print\\:p-0 {
+      padding: 0 !important;
+    }
+
+    a {
+      color: black;
+      text-decoration: underline;
+    }
+
+    a[href^="http"]:after {
+      content: " (" attr(href) ")";
+      font-size: 0.8em;
+      color: #666;
+    }
+
+    a[href^="mailto"]:after {
+      content: " (" attr(href) ")";
+      font-size: 0.8em;
+      color: #666;
+    }
+  }
 }
 
 

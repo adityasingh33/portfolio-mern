@@ -61,14 +61,8 @@ export default function Header() {
   };
 
   const downloadResume = () => {
-    // Replace with your actual resume URL
-    const resumeUrl = '/resume.pdf';
-    const link = document.createElement('a');
-    link.href = resumeUrl;
-    link.download = 'Aditya_Singh_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // Open resume PDF in new tab
+    window.open('/resume.pdf', '_blank', 'noopener,noreferrer');
   };
 
   return (
